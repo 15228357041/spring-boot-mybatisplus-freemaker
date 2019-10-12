@@ -1,0 +1,123 @@
+html{
+	height: 100%;
+}
+body{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+.login{
+	position: relative;
+	padding-top: 2rem;
+	width: 100%;
+	height: 100%;
+	background:url(../images/bg2.jpg)  center bottom  no-repeat ;
+	background-size: cover ;
+	overflow-y:  auto;
+}
+
+#text1{
+	position: absolute;
+	top: 0;left: 0
+}
+#text{
+	position: absolute;
+	bottom: 30px;left: 0;
+	color: #fff;
+}
+.logo{
+	text-align: center;
+	margin-bottom: 1rem;
+}
+.logo img{
+	width: 1.8rem;
+}
+.loginForm{
+	padding-bottom: .3rem;
+	margin:0 .3rem;
+	z-index: 10;
+}
+.loginList{
+	font-size: .28rem;
+	color: #fff;
+}
+.loginList li{
+	padding:.1rem 0;
+	font-size: .28rem;
+}
+.loginList .inputArea{
+	position: relative;
+	flex: 1;
+	width: 100%;
+	margin-left:.2rem;
+	padding-left:.2rem;
+	height: .6rem;
+	border-left: .02rem solid #fff;
+
+}
+.loginList .inputArea span.onError{
+	color: red;
+	position: absolute;
+	top:0;
+	right: 0;
+	font-size: .24rem;
+	height: .6rem;
+	line-height: .6rem
+}
+.loginList .inputArea input{
+	width: 100%;
+	background: none;
+	font-size: .28rem;
+	color: #fff;
+	height: .6rem;
+	line-height: .4rem;
+}
+.line{
+	margin-top:.1rem;
+	height: .05rem;
+	border:.02rem solid #fff;
+	border-top: none
+}
+.loginBtn{
+	display: block;
+	width: 100%;
+	height: .8rem;
+	line-height: .8rem;
+	border-radius: 0.1rem;
+	background: #fabe00;
+	color: #fff;
+	font-size: .28rem;
+	text-align: center;
+}
+.shiftBtn{
+	margin-top:.2rem;
+	width: 100%;
+	height: .8rem;
+	border-radius: .1rem;
+	border:.02rem solid #fff;
+	color: #fff;
+	font-size: .28rem;
+	background: none
+}
+.codeBtn{
+	width: 1.4rem;
+	height: .6rem;
+	border-radius: 0.1rem;
+	background: #fabe00;
+	color: #fff;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color:    #eee!important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:    #eee!important;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:    #eee!important;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color:    #eee!important;
+}s

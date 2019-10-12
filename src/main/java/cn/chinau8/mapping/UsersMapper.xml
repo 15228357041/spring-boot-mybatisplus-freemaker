@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.chinau8.mapper.UsersMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="cn.chinau8.entity.Users">
+		<id column="id" property="id" />
+		<result column="userkey" property="userkey" />
+		<result column="username" property="username" />
+		<result column="password" property="password" />
+		<result column="usergroupid" property="usergroupid" />
+		<result column="email" property="email" />
+		<result column="address" property="address" />
+		<result column="telephone" property="telephone" />
+		<result column="startdate" property="startdate" />
+		<result column="createdate" property="createdate" />
+		<result column="createuserid" property="createuserid" />
+		<result column="modificationdate" property="modificationdate" />
+		<result column="modificationuserid" property="modificationuserid" />
+		<result column="memo" property="memo" />
+		<result column="picpath" property="picpath" />
+		<result column="barcode" property="barcode" />
+		<result column="status" property="status" />
+		<result column="enddate" property="enddate" />
+		<result column="mobilephone" property="mobilephone" />
+		<result column="humanid" property="humanid" />
+		<result column="orgid" property="orgid" />
+		<result column="ismulti" property="ismulti" />
+		<result column="tombstone" property="tombstone" />
+		<result column="logintype" property="logintype" />
+		<result column="extravarchar1" property="extravarchar1" />
+		<result column="extravarchar2" property="extravarchar2" />
+		<result column="extravarchar3" property="extravarchar3" />
+		<result column="extravarchar4" property="extravarchar4" />
+		<result column="extravarchar5" property="extravarchar5" />
+		<result column="extravarchar6" property="extravarchar6" />
+		<result column="extravarchar7" property="extravarchar7" />
+		<result column="extravarchar8" property="extravarchar8" />
+		<result column="extravarchar9" property="extravarchar9" />
+		<result column="extravarchar10" property="extravarchar10" />
+		<result column="extradecimal1" property="extradecimal1" />
+		<result column="extradecimal2" property="extradecimal2" />
+		<result column="extradecimal3" property="extradecimal3" />
+		<result column="extradecimal4" property="extradecimal4" />
+		<result column="extradecimal5" property="extradecimal5" />
+		<result column="extraint1" property="extraint1" />
+		<result column="extraint2" property="extraint2" />
+		<result column="extraint3" property="extraint3" />
+		<result column="extraint4" property="extraint4" />
+		<result column="extraint5" property="extraint5" />
+		<result column="extraid1" property="extraid1" />
+		<result column="extraid2" property="extraid2" />
+		<result column="extraid3" property="extraid3" />
+		<result column="extraid4" property="extraid4" />
+		<result column="extraid5" property="extraid5" />
+		<result column="extradatetime1" property="extradatetime1" />
+		<result column="extradatetime2" property="extradatetime2" />
+		<result column="extradatetime3" property="extradatetime3" />
+		<result column="extradatetime4" property="extradatetime4" />
+		<result column="extradatetime5" property="extradatetime5" />
+		<result column="customerid" property="customerid" />
+		<result column="wechatuserid" property="wechatuserid" />
+		<result column="departmentid" property="departmentid" />
+		<result column="ishuman" property="ishuman" />
+		<result column="rootuserid" property="rootuserid" />
+		<result column="shareid" property="shareid" />
+		<result column="saleid" property="saleid" />
+		<result column="officalwechatkey" property="officalwechatkey" />
+		<result column="postid" property="postid" />
+		<result column="birthdatetime" property="birthdatetime" />
+		<result column="idcard" property="idcard" />
+		<result column="ismarried" property="ismarried" />
+		<result column="isbirthed" property="isbirthed" />
+		<result column="education" property="education" />
+		<result column="major" property="major" />
+		<result column="forgetstate" property="forgetstate" />
+		<result column="isadmin" property="isadmin" />
+		<result column="registrationstatus" property="registrationstatus" />
+		<result column="workstation" property="workstation" />
+		<result column="departmentname" property="departmentname" />
+		<result column="inspectionhumanid" property="inspectionhumanid" />
+		<result column="factorycode" property="factorycode" />
+		<result column="changepassword" property="changepassword" />
+		<result column="shiroroleid" property="shiroroleid" />
+	</resultMap>
+
+</mapper>

@@ -1,0 +1,318 @@
+
+/************baseForm*************/
+.baseForm{
+    background: #fff;
+}
+.baseForm .baseLine{
+    height: 1.2rem;
+    padding-right:.2rem;
+    margin-left: .2rem;
+    border-bottom: .02rem solid #efefef
+}
+.baseForm .baseLine label{
+    height:.8rem;
+    line-height: .8rem;
+    font-size: .28rem;
+}
+.baseForm .inputArea{
+    position: relative;
+    flex:1;
+    width: 100%;
+}
+.baseForm .inputArea span.onError{
+    position: absolute;
+    right: 0;
+    bottom: .05rem;
+    color:red;
+    font-size: .24rem;
+    padding-left: .2rem;
+}
+.baseForm .inputArea input[type="text"],
+.baseForm .inputArea input[type="password"],
+.baseForm .inputArea input[type="number"],
+.baseForm .inputArea input[type="date"],
+.baseForm .inputArea input[type="month"],
+.baseForm .inputArea select{
+    flex:1;
+    padding-left: .2rem;
+    width: 100%;
+    height: 1.2rem;
+    line-height: .6rem;
+    text-align: right;
+    font-size: .28rem;
+
+}
+
+.baseForm .inputArea select{
+    padding-right: .8rem;
+}
+.baseForm .selectArea{
+    position: relative;    
+}
+.baseForm .selectArea::after{
+  content:"\e612" ;
+  font-family:"iconfont" !important;
+  position: absolute;
+  top: .1rem;
+  right: 0;
+  height: .5rem;
+  line-height: .5rem;
+  width: .5rem;
+  text-align: center;
+  color: #bdbdbd;
+  pointer-events: none;
+}
+.baseForm .imgUplad1 .inputArea{
+    position: relative;
+    margin-left: 17%;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    width: 66%;
+}
+.baseForm .imgUplad2 .inputArea{
+    position: relative;
+    margin-left: 5%;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    width: 90%;
+}
+.baseForm .imgUplad1 .inputArea img,.baseForm .imgUplad2 .inputArea img{
+    width: 100%;
+}
+.baseForm .imgUplad1 .inputArea input[type="file"],.baseForm .imgUplad2 .inputArea input[type="file"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+.baseForm .btnGetCode{
+  display: inline-block;
+  font-size: .24rem;
+  width: 1.4rem;
+  height: .6rem;
+  color: #fabe00;
+  background: #fff;
+  border-left: .02rem solid #fabe00
+}
+
+.baseForm input[type="radio"]{
+    margin-right: .1rem;
+    width: .28rem;
+    height: .28rem;
+}
+.submitBtn{
+	display: block;
+	margin:.3rem .2rem;
+	height: .8rem;
+	line-height: .8rem;
+	border-radius: 0.1rem;
+	background: #fabe00;
+	color: #fff;
+	font-size: .28rem;
+	text-align: center;
+}
+.submitBtn2{
+	display: block;
+	margin:.3rem .2rem;
+	height: .8rem;
+	line-height: .8rem;
+	border-radius: 0.1rem;
+	background: none;
+	border:.02rem solid #fabe00;
+	color: #fabe00;
+	font-size: .28rem;
+	text-align: center;
+}
+/*****************单选开关***************/
+.switchBtn{
+	width: 2.4rem;
+	height: .5rem;
+	border-radius: .5rem;
+	background:#fff;
+	border:.02rem solid #fabe00;
+}
+.switchBtn .radioBtn{
+	position: relative;
+	flex:1;
+	height: .5rem!important;
+	background:#fff;
+	color: #999;
+	line-height:.5rem!important;
+	text-align: center;
+	font-size: .24rem!important;
+}
+.switchBtn .radioBtn.on{
+	background:#fabe00;
+	color: #fff;
+} 
+.switchBtn .radioBtn input[type="radio"]{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	margin:0;
+}
+
+
+/*******************联想搜索******************/
+.imgSearch{
+  display: none;
+  position: fixed;
+  top:0rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 10000
+}
+.searchInput{
+  padding-right:.3rem;
+  height: 1rem;
+  background: #fabe00;
+  line-height: 1rem;
+  color: #fff;
+  font-size: .32rem;
+}
+.searchInput input{
+  flex: 1;
+  padding:0 .2rem;
+  width: 100%;
+  height: .6rem;
+  line-height: .5rem;
+}
+.searchInput .iconfont{
+  width: .8rem;
+  text-align: center;
+}
+.searchInput .icon-delete-black{
+  background: #fff;
+  color:#ccc;
+  height: .6rem;
+  line-height: .6rem;
+}
+.imgWords{
+
+  padding:.2rem;
+}
+.imgWords li{
+  height: .8rem;
+  line-height: .8rem;
+  border-bottom: .02rem solid #efefef;
+}
+/*****************地址选择***************/
+.layerFromBtm{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+}
+
+.layerFromBtm .mask{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+}
+.layerFromBtm .con{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none
+}
+.layerFromBtm .con .select1{
+    margin: .2rem;
+}
+.layerFromBtm .con .select1 ul{
+    margin-bottom: .2rem;
+    border-radius: .1rem;
+    background: #fff;
+}
+.layerFromBtm .con .select1 li{
+    height:.9rem;
+    line-height: .9rem;
+    color: #333;
+    text-align: center;
+}
+.layerFromBtm .con .select1 li:nth-child(n+2){
+    border-top: .02rem solid #efefef
+}
+.layerFromBtm .con .btn{
+    margin-bottom: .3rem;
+    display: block;
+    width: 100%;
+    height: .9rem;
+    text-align: center;
+    border:.02rem solid #efefef;
+    border-radius: .1rem;
+    background: #fff;
+}
+.layerFromBtm .con .select2{
+  background: #fff;
+}
+.layerFromBtm .con .select2 .top{
+  position: relative;
+  height: .8rem;
+  line-height: .8rem;
+  text-align: center;
+  border-bottom: .02rem solid #ddd;
+}
+.layerFromBtm .con .select2 .top .icon-close{
+  position: absolute;
+  font-size: .36rem;
+  right: .2rem;
+  top: 0;
+  height: .8rem;
+  line-height: .8rem;
+}
+
+.layerFromBtm .con .select2 .tabs{
+  height: .8rem;
+  line-height: .8rem;
+  text-align: center;
+  border-bottom: .02rem solid #ddd;
+}
+.layerFromBtm .con .select2 .tabs li{
+  float: left;
+  width:33.33%;
+  color: #999;
+  font-size: .28rem;
+}
+.layerFromBtm .con .select2 .tabs li.selected{
+  height: .8rem;
+  color: #1492f6;
+  border-bottom: .02rem solid #1492f6
+}
+.layerFromBtm .con .select2 .tabcon{
+  position: relative;
+  height: 3rem;
+  background: #efefef;
+  overflow-y: scroll;
+}
+.layerFromBtm .con .select2 .tabcon li{
+  display: none;
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.layerFromBtm .con .select2 .tabcon li.selected{
+  display: block;
+}
+.layerFromBtm .con .select2 .tabcon a{
+  display: block;
+  color: #333;
+  padding: 0 .4rem;
+  line-height: .6rem;
+  height:.6rem;
+}

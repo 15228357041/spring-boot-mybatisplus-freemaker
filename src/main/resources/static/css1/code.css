@@ -1,0 +1,81 @@
+.alieditContainer{
+    position: relative;
+    width:4.8rem;
+    margin: .2rem auto
+} 
+    
+.payPwd {
+    position: absolute;
+    left: 0;
+    top: 0;   
+    right: 0;
+    bottom: 0;
+    width: 4.8rem;
+    color: #fff;
+    font-size: 12px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-user-select: initial;
+    outline: 'none';
+    z-index: 999;
+    opacity:0;
+    filter:alpha(opacity=0);
+  }
+
+  .payPwd-box {
+    position: relative;
+    width: 4.8rem;
+    height: .8rem;
+    cursor:text;
+    background: #fff;
+    outline: none;
+    
+
+  }
+    .payPwd-box i {
+        flex: 1;
+        height: .5rem;
+        width: .78rem;
+        border-left: .02rem solid #cccccc;
+    }
+    .payPwd-box i{
+
+    }
+   .payPwd-box .active {
+        background: url('../images/password-blink.gif') no-repeat center center;        
+    }
+   .payPwd-box b {
+        display: block;
+        margin: 0 auto;
+        height: .5rem;
+        width: .76rem;
+        overflow: hidden;
+        
+
+    }
+    .payPwd-box span {
+        position: absolute;
+        display: block;
+        left: 0px;
+        top: 0px;
+        height: 30px;
+        border: 1px solid rgba(82, 168, 236, .8);
+        border-radius: 2px;
+        visibility: hidden;
+       
+    }
+    .ui-securitycore  .ui-form-item .ui-form-explain{
+		margin-top: 8px; 
+	}
+  .i-block{
+	display:inline-block;
+  }
+.six-password{
+    position: relative;
+    height:.8rem;
+    width:4.8rem;
+    overflow: hidden;
+    vertical-align: middle;
+    border: .02rem solid #cccccc;
+    border-radius: .1rem;
+}

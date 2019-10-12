@@ -1,0 +1,9 @@
+server:
+  port: 80
+  context-path: /agent
+logging:
+  path: D://log/spring_boot/dev/
+  file: hx.log
+upload:
+  tempdir: D://
+  imagePath: D://images/

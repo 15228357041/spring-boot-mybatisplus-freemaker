@@ -1,0 +1,6 @@
+server:
+  port: 80
+  context-path: /agent
+upload:
+  tempdir: /usr/local
+  imagePath: http://testimages.chinau8.com/

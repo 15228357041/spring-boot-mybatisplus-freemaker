@@ -1,0 +1,93 @@
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+   # url: jdbc:mysql://218.244.147.117:3306/tour_bus?useUnicode=true&characterEncoding=utf-8
+    url: jdbc\:mysql\://52.83.171.94\:3006/geely_20190114?createDatabaseIfNotExist\=true&useUnicode\=true&characterEncoding\=utf-8
+    #url:jdbc:mysql://rm-bp1ooi1743qk35clexo.mysql.rds.aliyuncs.com/u8?useUnicode=true&characterEncoding=utf-8
+    username: mysql
+    password: 123456
+    #password: 111111
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 1
+    minIdle: 3
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+          # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+          # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+          # 打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+          # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,slf4j
+          # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+          # 合并多个DruidDataSource的监控数据
+          #useGlobalDataSourceStat: true
+  redis:
+    host: localhost
+    port: 6379
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+    database: 10
+    password:
+  session:
+    store-type: redis
+  freemarker:
+    cache: false  #是否开启template caching.
+    allow-request-override: false  #指定HttpServletRequest的属性是否可以覆盖controller的model的同名项
+    allow-session-override: false  #指定HttpSession的属性是否可以覆盖controller的model的同名项
+    check-template-location: true  #是否检查templates路径是否存在.
+    charset: utf-8  #设定Template的编码.
+    content-type: text/html  #设定Content-Type.
+    expose-request-attributes: false  #设定所有request的属性在merge到模板的时候，是否要都添加到model中.
+    expose-session-attributes: false  #设定所有HttpSession的属性在merge到模板的时候，是否要都添加到model中.
+    expose-spring-macro-helpers: false #设定是否以springMacroRequestContext的形式暴露RequestContext给Spring’s macro library使用
+    suffix: .ftl #设定模板的后缀.
+    template-loader-path: classpath:/templates/     #设定模板的加载路径，多个以逗号分隔，默认: ["classpath:/templates/"]
+    request-context-attribute: ctx #用于获取.ftl页面 的basePath
+config:
+    pageSize: 10
+    systemName: 游巴代理人APP
+    u8url: http://t.chinau8.cn/login.aspx?u=http://t.chinau8.cn/frame2.aspx   #游巴客服登陆注册页
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: cn.chinau8.entity
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 3
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 2
+    #驼峰下划线转换
+    db-column-underline: true
+    #刷新mapper 调试神器
+    refresh-mapper: true
+    #数据库大写下划线转换
+    #capital-mode: true
+    #序列接口实现类配置
+    #key-generator: com.baomidou.springboot.xxx
+    #逻辑删除配置（下面3个配置）
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    #自定义SQL注入器
+    #sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+    #自定义填充策略接口实现
+    #meta-object-handler: com.baomidou.springboot.xxx
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false

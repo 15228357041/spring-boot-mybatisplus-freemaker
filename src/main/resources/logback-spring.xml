@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" /><!--base.xml是Spring Boot的日志系统预先定义了一些系统变量-->
+    <springProfile name="test,dev">
+        <logger name="org.springframework.web" level="DEBUG"/>
+        <logger name="org.springboot.sample" level="DEBUG" />
+
+        <!--show_sql-->
+        <logger name="cn.chinau8.mapper" level="DEBUG"/>
+    </springProfile>
+
+
+    <!-- 生产环境. -->
+    <springProfile name="prod">
+        <logger name="org.springframework.web" level="ERROR"/>
+        <logger name="org.springboot.sample" level="ERROR" />
+        <logger name="cn.chinau8" level="ERROR" />
+    </springProfile>
+
+
+</configuration>

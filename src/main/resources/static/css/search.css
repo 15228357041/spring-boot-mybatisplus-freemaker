@@ -1,0 +1,131 @@
+
+.searchPage{
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgb(248,248,248);
+    z-index: 10000
+}
+.searchBox{
+	position: relative;
+    width: 100%;
+    height: .8rem;
+    border-bottom: .02rem solid #dfdfdf
+}
+
+.searchClose{
+    width: .8rem;
+    height: .6rem;
+    line-height: .6rem;
+    text-align: center;
+}
+.searchForm{
+	flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inputBox{
+	flex: 1;
+    padding: 0  .1rem 0 .2rem; 
+    width: 100%;
+    
+    border-radius: .6rem;
+    background: #eeeeee;
+    height: .6rem;
+
+}
+.inputBox input{
+    display: block;
+    width: 100%;
+    border: none;
+    line-height: .6rem;
+    outline: none;
+    font-size: .24rem;
+    background: #eeeeee;
+}
+.inputBox .inputClear{ 
+	display: none;    
+    width: .4rem;  
+    color: #aaa;
+    
+}
+
+.searchBtn{  
+	margin:0 .2rem;
+    width: 1rem;
+    height: .5rem;
+    line-height: .5rem;
+    text-align: center;
+    color: #fff;
+    border-radius: .1rem;
+    background: #fabd00;
+}
+
+.search-land{
+	background: #fff;
+    padding:0 .3rem;
+}
+
+.recent-search-head, .hot-search-head {
+    padding: .2rem  0;
+}
+.recent-search-head p, .hot-search-head p {
+    font-size: .28rem;
+    color: #252525;
+    float: left;
+    padding-left: .02rem;
+}
+.recent-search-head .iconfont, .hot-search-head .iconfont {
+    float: right;
+    padding-left: .02rem;
+    font-size: .36rem;
+    color: #aaa;    
+}
+
+.recent-search-tags, .hot-search-tags {
+    padding-right: .04rem;
+    overflow: hidden;
+    font-size: .24rem;
+    text-align: center;
+}
+.recent-search-tags span, .hot-search-tags span {
+    display: block;
+    float: left;
+    width: 1.9rem;
+    overflow: hidden;
+    padding-right: .2rem;
+    padding-bottom: .14rem;
+}
+.recent-search-tags a, .hot-search-tags a {
+    height:  .5rem;
+    line-height: .5rem;
+    border-radius:  .5rem;
+    display: block;
+    width: 100%;
+    color: #444444;    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #eeeeee;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    overflow: hidden;
+}
+
+.search-match{
+	display: none;
+	background: #fff
+}
+.search-match li{
+	height: .84rem;
+	border-bottom: .02rem solid  #efefef
+}
+.search-match li a{
+	padding: 0 .2rem;
+	color: #333;
+	line-height: .8rem;
+}
