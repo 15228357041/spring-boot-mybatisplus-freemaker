@@ -1,37 +1,6 @@
 spring:
   profiles:
     active: prod
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-   # url: jdbc:mysql://218.244.147.117:3306/tour_bus?useUnicode=true&characterEncoding=utf-8
-    url: jdbc\:mysql\://52.83.171.94\:3006/geely_20190114?createDatabaseIfNotExist\=true&useUnicode\=true&characterEncoding\=utf-8
-    #url:jdbc:mysql://rm-bp1ooi1743qk35clexo.mysql.rds.aliyuncs.com/u8?useUnicode=true&characterEncoding=utf-8
-    username: mysql
-    password: 123456
-    #password: 111111
-    type: com.alibaba.druid.pool.DruidDataSource
-    initialSize: 1
-    minIdle: 3
-    maxActive: 20
-    # 配置获取连接等待超时的时间
-    maxWait: 60000
-          # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-    timeBetweenEvictionRunsMillis: 60000
-          # 配置一个连接在池中最小生存的时间，单位是毫秒
-    minEvictableIdleTimeMillis: 30000
-    validationQuery: select 'x'
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-          # 打开PSCache，并且指定每个连接上PSCache的大小
-    poolPreparedStatements: true
-    maxPoolPreparedStatementPerConnectionSize: 20
-          # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    filters: stat,wall,slf4j
-          # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-          # 合并多个DruidDataSource的监控数据
-          #useGlobalDataSourceStat: true
   redis:
     host: localhost
     port: 6379
@@ -55,13 +24,13 @@ spring:
     expose-request-attributes: false  #设定所有request的属性在merge到模板的时候，是否要都添加到model中.
     expose-session-attributes: false  #设定所有HttpSession的属性在merge到模板的时候，是否要都添加到model中.
     expose-spring-macro-helpers: false #设定是否以springMacroRequestContext的形式暴露RequestContext给Spring’s macro library使用
-    suffix: .ftl #设定模板的后缀.
+    suffix: .html #设定模板的后缀.
     template-loader-path: classpath:/templates/     #设定模板的加载路径，多个以逗号分隔，默认: ["classpath:/templates/"]
     request-context-attribute: ctx #用于获取.ftl页面 的basePath
 config:
     pageSize: 10
-    systemName: 游巴代理人APP
-    u8url: http://t.chinau8.cn/login.aspx?u=http://t.chinau8.cn/frame2.aspx   #游巴客服登陆注册页
+    systemName: demo
+    u8url: http://t.chinau8.cn/login.aspx?u=http://t.chinau8.cn/frame2.aspx
 
 #mybatis
 mybatis-plus:

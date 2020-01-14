@@ -31,13 +31,13 @@ import java.util.Properties;
 @EnableTransactionManagement(proxyTargetClass = true)
 public class MyBatisConfig {
 
-    @Value("${spring.datasource.driver-class-name}")
+    @Value("${datasource.driver-class-name}")
     String driverClass;
-    @Value("${spring.datasource.url}")
+    @Value("${datasource.url}")
     String url;
-    @Value("${spring.datasource.username}")
+    @Value("${datasource.username}")
     String userName;
-    @Value("${spring.datasource.password}")
+    @Value("${datasource.password}")
     String passWord;
 
     @Bean(name = "dataSource")
@@ -84,7 +84,7 @@ public class MyBatisConfig {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {
             //基于注解扫描Mapper，不需配置xml路径
-            bean.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));
+            bean.setMapperLocations(resolver.getResources("classpath*:cn/chinau8/mapping/*.xml"));
             return bean.getObject();
         } catch (Exception e) {
             e.printStackTrace();

@@ -61,12 +61,13 @@
 		<result column="customerid" property="customerid" />
 		<result column="wechatuserid" property="wechatuserid" />
 		<result column="departmentid" property="departmentid" />
-		<result column="ishuman" property="ishuman" />
 		<result column="rootuserid" property="rootuserid" />
+		<result column="ishuman" property="ishuman" />
 		<result column="shareid" property="shareid" />
 		<result column="saleid" property="saleid" />
-		<result column="officalwechatkey" property="officalwechatkey" />
+		<result column="qiyewechatkey" property="qiyewechatkey" />
 		<result column="postid" property="postid" />
+		<result column="officalwechatkey" property="officalwechatkey" />
 		<result column="birthdatetime" property="birthdatetime" />
 		<result column="idcard" property="idcard" />
 		<result column="ismarried" property="ismarried" />
@@ -78,10 +79,143 @@
 		<result column="registrationstatus" property="registrationstatus" />
 		<result column="workstation" property="workstation" />
 		<result column="departmentname" property="departmentname" />
-		<result column="inspectionhumanid" property="inspectionhumanid" />
-		<result column="factorycode" property="factorycode" />
-		<result column="changepassword" property="changepassword" />
-		<result column="shiroroleid" property="shiroroleid" />
+		<result column="inspectionhumankey" property="inspectionhumankey" />
+		<result column="isseniormanagement" property="isseniormanagement" />
+		<result column="externalresource" property="externalresource" />
+		<result column="accountid" property="accountid" />
+		<result column="costtypeid" property="costtypeid" />
+		<result column="costpurposeid" property="costpurposeid" />
+		<result column="qq" property="qq" />
+		<result column="hourperweek" property="hourperweek" />
+		<result column="address1" property="address1" />
+		<result column="address2" property="address2" />
+		<result column="address3" property="address3" />
+		<result column="address4" property="address4" />
+		<result column="address5" property="address5" />
+		<result column="hourrate1" property="hourrate1" />
+		<result column="hourrate2" property="hourrate2" />
+		<result column="hourrate3" property="hourrate3" />
+		<result column="hourrate4" property="hourrate4" />
+		<result column="hourrate5" property="hourrate5" />
+		<result column="hourrate6" property="hourrate6" />
+		<result column="hourrate7" property="hourrate7" />
+		<result column="hourrate8" property="hourrate8" />
+		<result column="hourrate9" property="hourrate9" />
+		<result column="hourrate10" property="hourrate10" />
+		<result column="hourrate11" property="hourrate11" />
+		<result column="hourrate12" property="hourrate12" />
+		<result column="hourrate13" property="hourrate13" />
+		<result column="hourrate14" property="hourrate14" />
+		<result column="hourrate15" property="hourrate15" />
+		<result column="hourrate16" property="hourrate16" />
+		<result column="hourrate17" property="hourrate17" />
+		<result column="hourrate18" property="hourrate18" />
+		<result column="hourrate19" property="hourrate19" />
+		<result column="hourrate20" property="hourrate20" />
+		<result column="yearweekfrom1" property="yearweekfrom1" />
+		<result column="yearweekfrom2" property="yearweekfrom2" />
+		<result column="yearweekfrom3" property="yearweekfrom3" />
+		<result column="yearweekfrom4" property="yearweekfrom4" />
+		<result column="yearweekfrom5" property="yearweekfrom5" />
+		<result column="yearweekfrom6" property="yearweekfrom6" />
+		<result column="yearweekfrom7" property="yearweekfrom7" />
+		<result column="yearweekfrom8" property="yearweekfrom8" />
+		<result column="yearweekfrom9" property="yearweekfrom9" />
+		<result column="yearweekfrom10" property="yearweekfrom10" />
+		<result column="yearweekto1" property="yearweekto1" />
+		<result column="yearweekto2" property="yearweekto2" />
+		<result column="yearweekto3" property="yearweekto3" />
+		<result column="yearweekto4" property="yearweekto4" />
+		<result column="yearweekto5" property="yearweekto5" />
+		<result column="yearweekto6" property="yearweekto6" />
+		<result column="yearweekto7" property="yearweekto7" />
+		<result column="yearweekto8" property="yearweekto8" />
+		<result column="yearweekto9" property="yearweekto9" />
+		<result column="yearweekto10" property="yearweekto10" />
+		<result column="specialhour1" property="specialhour1" />
+		<result column="specialhour2" property="specialhour2" />
+		<result column="specialhour3" property="specialhour3" />
+		<result column="specialhour4" property="specialhour4" />
+		<result column="specialhour5" property="specialhour5" />
+		<result column="specialhour6" property="specialhour6" />
+		<result column="specialhour7" property="specialhour7" />
+		<result column="specialhour8" property="specialhour8" />
+		<result column="specialhour9" property="specialhour9" />
+		<result column="specialhour10" property="specialhour10" />
+		<result column="useforworkresource" property="useforworkresource" />
+		<result column="useforworkresponsible" property="useforworkresponsible" />
+		<result column="useforworkorderby" property="useforworkorderby" />
+		<result column="useforpurchaseorderby" property="useforpurchaseorderby" />
+		<result column="useforintpurcorderby" property="useforintpurcorderby" />
+		<result column="useforprojectresponsible" property="useforprojectresponsible" />
+		<result column="useforprojectorderby" property="useforprojectorderby" />
+		<result column="useforstockremoval" property="useforstockremoval" />
+		<result column="humanbarcode" property="humanbarcode" />
+		<result column="skills" property="skills" />
+		<result column="emailaddress" property="emailaddress" />
+		<result column="supplierid" property="supplierid" />
+		<result column="lastchangedate" property="lastchangedate" />
+		<result column="lastchangetime" property="lastchangetime" />
+		<result column="lastexportdate" property="lastexportdate" />
+		<result column="lastexporttime" property="lastexporttime" />
+		<result column="lastimportdate" property="lastimportdate" />
+		<result column="lastimporttime" property="lastimporttime" />
+		<result column="nonproductiveaccountid" property="nonproductiveaccountid" />
+		<result column="siteid" property="siteid" />
+		<result column="recordactive" property="recordactive" />
+		<result column="custombarcode" property="custombarcode" />
+		<result column="extrawsinfo1" property="extrawsinfo1" />
+		<result column="extrawsinfo2" property="extrawsinfo2" />
+		<result column="categoryid" property="categoryid" />
+		<result column="comment1" property="comment1" />
+		<result column="comment2" property="comment2" />
+		<result column="comment3" property="comment3" />
+		<result column="comment4" property="comment4" />
+		<result column="comment5" property="comment5" />
+		<result column="comment6" property="comment6" />
+		<result column="comment7" property="comment7" />
+		<result column="comment8" property="comment8" />
+		<result column="comment9" property="comment9" />
+		<result column="comment10" property="comment10" />
+		<result column="planningactive" property="planningactive" />
+		<result column="plantopct" property="plantopct" />
+		<result column="wsgroupid" property="wsgroupid" />
+		<result column="numbermen" property="numbermen" />
+		<result column="hourspersonweek" property="hourspersonweek" />
+		<result column="locationid" property="locationid" />
+		<result column="extrawsinfo3" property="extrawsinfo3" />
+		<result column="extrawsinfo4" property="extrawsinfo4" />
+		<result column="extrawsinfo5" property="extrawsinfo5" />
+		<result column="contactpersonid" property="contactpersonid" />
+		<result column="shiftplanid" property="shiftplanid" />
+		<result column="shiftnextseq" property="shiftnextseq" />
+		<result column="shiftinitialdate" property="shiftinitialdate" />
+		<result column="shiftinitialoffset" property="shiftinitialoffset" />
+		<result column="useforroundresponsible" property="useforroundresponsible" />
+		<result column="extrawsinfo6" property="extrawsinfo6" />
+		<result column="extrawsinfo7" property="extrawsinfo7" />
+		<result column="extrawsinfo8" property="extrawsinfo8" />
+		<result column="extrawsinfo9" property="extrawsinfo9" />
+		<result column="extrawsinfo10" property="extrawsinfo10" />
+		<result column="rfid" property="rfid" />
+		<result column="moid" property="moid" />
+		<result column="plantid" property="plantid" />
+		<result column="legalunitid" property="legalunitid" />
+		<result column="legalunitcurrencyid" property="legalunitcurrencyid" />
+		<result column="lastchangedtz" property="lastchangedtz" />
+		<result column="lastexportdtz" property="lastexportdtz" />
+		<result column="lastimportdtz" property="lastimportdtz" />
+		<result column="recordlanguageid" property="recordlanguageid" />
+		<result column="onguard" property="onguard" />
+		<result column="issupplier" property="issupplier" />
+		<result column="firstname" property="firstname" />
+		<result column="middlename" property="middlename" />
+		<result column="lastname" property="lastname" />
+		<result column="judgegrade" property="judgegrade" />
+		<result column="shiftid" property="shiftid" />
+		<result column="typeid" property="typeid" />
+		<result column="statusid" property="statusid" />
+		<result column="humanstatus" property="humanstatus" />
 	</resultMap>
 
 </mapper>

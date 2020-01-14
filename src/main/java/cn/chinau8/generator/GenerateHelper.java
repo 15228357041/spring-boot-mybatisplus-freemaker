@@ -55,7 +55,7 @@ public class GenerateHelper {
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("mysql");
         dsc.setPassword("123456");
-        dsc.setUrl("jdbc:mysql://52.83.171.94:3006/geely_20190114?useUnicode=true&characterEncoding=utf-8");
+        dsc.setUrl("jdbc:mysql://52.83.171.94:3006/unicare0901?useUnicode=true&characterEncoding=utf-8");
         mpg.setDataSource(dsc);
 
 

@@ -1,5 +1,6 @@
 package cn.chinau8.controller;
 
+
 import cn.chinau8.entity.Users;
 import cn.chinau8.service.IUsersService;
 import com.baomidou.mybatisplus.mapper.Condition;
@@ -30,15 +31,11 @@ public class UsersController {
     @RequestMapping("/ctse")
     public String test(Model model){
         Users users = usersService.selectById(1);
-       List<Users> list = usersService.selectList(
+        List<Users> list = usersService.selectList(
                 Condition.instance().setSqlSelect("id").orderBy("id")
         );
-
-
-
-
         model.addAttribute("users", users);
-        return "index.jsp";
+        return "user/user";
     }
 
     public static void main(String[] args) {

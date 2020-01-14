@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 
 	<name>agent</name>
-	<description>游巴代理商平台</description>
+	<description>demo</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,17 +25,6 @@
 	</properties>
 	<!--SpringBoot配置-->
 	<dependencies>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate</artifactId>
-			<version>3.2.1.ga</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-annotations</artifactId>
-			<version>3.2.0.ga</version>
-		</dependency>
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
@@ -63,18 +52,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 				<!--发布tomcat时开启-->
-		    <exclusions>
+		    <!--<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions>-->
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
-			<scope>provided</scope>
 		</dependency>
 		<!--发布tomcat时开启-->
 		<dependency>
