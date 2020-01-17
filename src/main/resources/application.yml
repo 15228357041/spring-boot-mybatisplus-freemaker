@@ -34,7 +34,7 @@ config:
 
 #mybatis
 mybatis-plus:
-  mapper-locations: classpath*:/mapper/**Mapper.xml
+  mapper-locations: classpath*:/mapping/**Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: cn.chinau8.entity
   global-config:

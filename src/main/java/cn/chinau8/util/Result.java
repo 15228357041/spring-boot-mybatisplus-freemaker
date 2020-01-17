@@ -12,6 +12,16 @@ public class Result<T> {
     /** 具体的内容 */
     private T data;
 
+    public Result() {
+
+    }
+
+    public Result(Integer code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+
     public Integer getCode() {
         return code;
     }
@@ -35,4 +45,5 @@ public class Result<T> {
     public void setData(T data) {
         this.data = data;
     }
+
 }

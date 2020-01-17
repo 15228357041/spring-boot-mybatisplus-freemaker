@@ -5,6 +5,8 @@
     <title>User Test</title>
 </head>
 <body>
-
+    <#list users as item>
+        ${item.userkey!""}${item.username!""}
+    </#list>
 </body>
 </html>

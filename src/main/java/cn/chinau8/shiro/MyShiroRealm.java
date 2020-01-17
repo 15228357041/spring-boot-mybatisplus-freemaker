@@ -1,6 +1,9 @@
 package cn.chinau8.shiro;
 
 
+import cn.chinau8.entity.Users;
+import cn.chinau8.service.IUsersService;
+import com.baomidou.mybatisplus.mapper.Condition;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -12,8 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Created by Administrator on 2017/4/25.
  */
 public class MyShiroRealm extends AuthorizingRealm {
-   /* @Autowired
-    private AgUserService agUserService;*/
+    @Autowired
+    private IUsersService usersService;
 
     /**
      * 认证信息.(身份验证)
@@ -32,17 +35,21 @@ public class MyShiroRealm extends AuthorizingRealm {
         String username = (String)token.getPrincipal();
         System.out.println(token.getCredentials());
         //用户安全校验
-   /*     AgUser user=agUserService.findByLoginName(username);
+        Users user = usersService.selectOne(
+                Condition.instance().setSqlSelect("id, userkey, username, password")
+                .eq("username", username)
+                .eq("tombstone", 1)
+        );
         //通过username从数据库中查找 User对象，如果找到，没找到.
         //实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
             if(user==null){
                 throw new UnknownAccountException("用户不存在");
             }
-       *//*
-        * 获取权限信息:这里没有进行实现，
-        * 请自行根据UserInfo,Role,Permission进行实现；
-        * 获取之后可以在前端for循环显示所有链接;
-        *//*
+
+        // 获取权限信息:这里没有进行实现，
+        // 请自行根据UserInfo,Role,Permission进行实现；
+        // 获取之后可以在前端for循环显示所有链接;
+
         //List<SysPermission> mainMenus = sysPermissionService.findMainMenus(userInfo.getId());
        // userInfo.setMainMenus(mainMenus);
 
@@ -51,18 +58,16 @@ public class MyShiroRealm extends AuthorizingRealm {
 
         //加密方式;
         //交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以自定义实现
-       *//* SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
-                userInfo, //用户名
-                userInfo.getPassword(), //密码
-                ByteSource.Util.bytes(userInfo.getPassword()),//salt=username+salt
-                getName()  //realm name
-        );*//*
-     */
+  /*      SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
+                user, //用户名
+                user.getPassword(), //密码
+                user.getUsername()  //realm name
+        );*/
         //明文: 若存在，将此用户存放到登录认证info中，无需自己做密码对比，Shiro会为我们进行密码对比校验
       SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
               username, //用户名
-             "password", //密码
-              "realName"  //realm name
+              user.getPassword(), //密码
+              user.getUsername()  //realm name
      );
         return authenticationInfo;
     }

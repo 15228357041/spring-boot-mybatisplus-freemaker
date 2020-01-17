@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import org.springframework.beans.factory.annotation.Value;
 
 
 /**
@@ -19,6 +20,15 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
  * @version: 1.0
  **/
 public class GenerateHelper {
+
+    @Value("${datasource.driver-class-name}")
+    String driverClass;
+    @Value("${datasource.url}")
+    String url;
+    @Value("${datasource.username}")
+    String userName;
+    @Value("${datasource.password}")
+    String passWord;
     /**
      * <p>
      * 测试 run 执行
@@ -53,9 +63,9 @@ public class GenerateHelper {
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("mysql");
-        dsc.setPassword("123456");
-        dsc.setUrl("jdbc:mysql://52.83.171.94:3006/unicare0901?useUnicode=true&characterEncoding=utf-8");
+        dsc.setUsername("root");
+        dsc.setPassword("111111");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/geely?useUnicode=true&characterEncoding=utf-8");
         mpg.setDataSource(dsc);
 
 
@@ -63,7 +73,7 @@ public class GenerateHelper {
         StrategyConfig strategy = new StrategyConfig();
 //strategy.setTablePrefix(new String[] { "bmd_", "mp_" });// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setInclude(new String[] { "users"}); // 需要生成的表
+        strategy.setInclude(new String[] { "schedule_job_log"}); // 需要生成的表
 // 字段名生成策略
         strategy.setFieldNaming(NamingStrategy.underline_to_camel);
         strategy.setSuperServiceImplClass("com.baomidou.mybatisplus.service.impl.ServiceImpl");

@@ -6,7 +6,7 @@ upload:
   imagePath: http://testimages.chinau8.com/
 datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/unicare?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://127.0.0.1:3306/geely?useUnicode=true&characterEncoding=utf-8
     username: root
     password: 111111
     type: com.alibaba.druid.pool.DruidDataSource

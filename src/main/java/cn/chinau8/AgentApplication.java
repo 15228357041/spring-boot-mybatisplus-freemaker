@@ -8,9 +8,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.ComponentScan;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,})
+@ComponentScan("cn.chinau8")
 @MapperScan("cn.chinau8.mapper*")
+@EnableSwagger2
 public class AgentApplication extends SpringBootServletInitializer {
 	@Override
 	protected SpringApplicationBuilder configure(
