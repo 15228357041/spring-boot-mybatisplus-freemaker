@@ -1,6 +1,7 @@
 package cn.chinau8.controller;
 
 
+import cn.chinau8.base.BaseController;
 import cn.chinau8.entity.Users;
 import cn.chinau8.mybatisplus.ConditionMybatis;
 import cn.chinau8.service.IUsersService;
@@ -33,7 +34,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/users")
 @Api(value = "用户",description = "用户操作 API", position = 100, protocols = "http")
-public class UsersController {
+public class UsersController extends BaseController{
     @Autowired
     IUsersService usersService;
 

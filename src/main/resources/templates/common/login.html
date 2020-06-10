@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>登录</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="description" content="！">
+    <meta name="Keywords" content="">
+
+    <link rel="stylesheet" href="${basePath}/css1/reset.css">
+    <link rel="stylesheet" href="${basePath}/css1/global.css">
+    <link rel="stylesheet" href="${basePath}/css1/flex.css">
+    <link rel="stylesheet" href="${basePath}/css1/iconfont.css">
+    <link rel="stylesheet" href="${basePath}/css1/login.css">
+    <link rel="stylesheet" href="${basePath}/css1/yss.css">
+</head>
+<body>
+<div class="login">
+    <div id="text1"></div>
+    <div class="loginForm">
+        <div class="logo">
+            <img src="${basePath}/images/LOGO.png" alt="">
+        </div>
+        <form class="zhLogin" id="zhLoginForm" >
+            <ul class="loginList ">
+                <li >
+                    <div flex="cross:center">
+                        &nbsp;&nbsp;<span class="iconfont icon-zhanghao"></span>&nbsp;&nbsp;<span>账号</span>
+                        <div class="inputArea">
+                            <input type="text" name="zhanghao" id="zhanghao" placeholder="请输入您的账户名"/>
+                        </div>
+                    </div>
+                    <p class="line"></p>
+                </li>
+                <li >
+                    <div flex="cross:center">
+                        &nbsp;&nbsp;<span class="iconfont icon-mima"></span>&nbsp;&nbsp;<span>密码</span>
+                        <div class="inputArea">
+                            <input type="password" name="pwd" id="pwd" placeholder="请输入您的密码"/>
+                        </div>
+                    </div>
+                    <p class="line"></p>
+                </li>
+            </ul>
+            <br>
+            <a href="javacript:;" class="loginBtn" id="zhLoginSubmit"  >  登 录  </a>
+            <button class="shiftBtn codeLoginBtn"  type="button">手机验证码登录</button>
+        </form>
+
+        <form class="codeLogin" style="display:none">
+            <ul class="loginList">
+                <li >
+                    <div flex="cross:center">
+                        &nbsp;&nbsp;<span class="iconfont icon-shoujihao"></span>&nbsp;&nbsp;<span>手机号</span>
+                        <div class="inputArea"><input type="number" name="phone" id="phone" placeholder="请输入您的手机号码"></div>
+                    </div>
+                    <p class="line"></p>
+                </li>
+                <li >
+                    <div flex="cross:center">
+                        &nbsp;&nbsp;<span class="iconfont icon-mima"></span>&nbsp;&nbsp;<span>验证码</span>
+                        <div class="inputArea"><input type="password" class="pwd2" id="pwd2" placeholder="验证码"></div>
+                        <button class="codeBtn f12 btnGetCode" type="button">获取验证码</button>
+                    </div>
+                    <p class="line"></p>
+                </li>
+            </ul>
+            <br>
+            <button class="loginBtn" id="codeLoginSubmit" type="button">  登 录  </button>
+            <button class="shiftBtn zhLoginBtn" type="button">账号密码登录</button>
+        </form>
+    </div>
+
+</div>
+<script src="${basePath}/js/jquery-3.0.0.min.js" type="text/javascript"></script>
+<script src="${basePath}/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="${basePath}/js/public.js" type="text/javascript"></script>
+<script>
+    $(function(){
+        var timer = 0;
+        $("#zhanghao,#pwd,#phonenum,#pwd2").focus(function(){
+
+            $(window).resize(function(){
+                clearTimeout(timer);
+                setTimeout(function() {
+                    var t = parseInt($(".login").height()) +  parseInt($(".login").css("paddingTop"));
+
+                    if($(".login")[0].scrollHeight>t){
+
+                        var s =$(".login")[0].scrollHeight-t;
+
+                        $(".login").animate({"scrollTop":s+"px"});
+
+                    }
+                }, 200);
+            });
+
+
+        });
+
+
+
+        $(".shiftBtn,.loginBtn,.login .mask").click(function(){
+            clearTimeout(timer);
+            $(".login").animate({"scrollTop":"0px"});
+        });
+
+        $(".zhLoginBtn").click(function(){
+            $(".codeLogin").hide();
+            $(".zhLogin").fadeIn();
+        });
+        $(".codeLoginBtn").click(function(){
+            $(".zhLogin").hide();
+            $(".codeLogin").fadeIn();
+        });
+///////////////////////////////账户密码登录/////////////////////////////////////
+
+        $("#zhLoginForm").validate({
+            ignore:"",
+            rules:{
+                zhanghao:{required:true},
+                pwd:{required:true}
+            },
+            messages:{
+                zhanghao:{required:"请输入您的账号！"},
+                pwd:{required:"请输入密码！"}
+            },
+            errorPlacement: function( error, element ) {
+                error.insertAfter(element);
+
+            },
+            // submitHandler:function(form){
+            //     alert("submitted");
+            //     form.submit();
+            // },
+            errorClass : "onError",
+            errorElement: "span"
+        });
+
+        $("#zhLoginSubmit").click(function(){
+            var loginName=$("#zhanghao").val();
+            var password=$("#pwd").val();
+           if( $("#zhLoginForm").valid()){
+               $.ajax({
+                   url : '${basePath}/doLogin.json',
+                   data : {
+                       loginName : loginName,
+                       password : password,
+                   },
+                   type : 'post',
+                   cache : false,
+                   dataType : 'json',
+                   success : function(data) {
+                       if (data.code == 10000) {
+                           showMsg("登入成功");
+                           location.href="${basePath}/index.html";
+
+                       }else{
+                           showMsg(data.msg);
+                       }
+                   },
+                   error : function() {
+                       showMsg("异常");
+                   }
+               });
+           };
+
+        });
+
+//////////////////////////////验证码登录//////////////////////////////////////
+        jQuery.validator.addMethod("isMobile", function(value, element) {
+            var length = value.length;
+            var mobile =  /^0?(13|15|18|14|17)[0-9]{9}$/;
+            return this.optional(element) || (length == 11 && mobile.test(value));
+        }, "联系电话错误！");
+        $(".codeLogin").validate({
+            ignore:"",
+            rules:{
+                phone:{required:true,number:true,isMobile:true}
+            },
+            messages:{
+                phone:{required:"请填写手机号码！",number:"手机号码错误！",isMobile:"手机号码错误！"}
+            },
+            errorPlacement: function( error, element ) {
+                error.insertAfter(element);
+            },
+            errorClass : "onError",
+            errorElement: "span"
+        });
+        $("#codeLoginSubmit").click(function(){
+           if($(".codeLogin").valid()){
+               var phone=$("#phone").val();
+               var code=$("#code").val();
+               $.ajax({
+                   url : '${basePath}/checkCode.json',
+                   data : {
+                       phone : phone,
+                       code : code,
+                   },
+                   type : 'post',
+                   cache : false,
+                   dataType : 'json',
+                   success : function(data) {
+                       if (data.code == 10000) {
+                           loginByPhone(phone,code);
+                       }else{
+                           showMsg("验证码出错");
+                       }
+                   },
+                   error : function() {
+                       showMsg("异常");
+                   }
+               });
+           } //验证手机
+            //验证码校验
+        });
+
+        var seconds = 60;
+        var timerEnable = true;
+        $(document).on("click",".btnGetCode",function(){//点击获取验证码
+            var t = $(this);
+            var ret1 =  $(".codeLogin").valid();//验证手机
+           //页面样式替换
+            if(timerEnable&&ret1){
+                timerEnable = false;
+                accoutTime(t);
+                var phone=$("#phone").val();
+                //发送验证码
+                sendCode(phone);
+            }
+        });
+    });
+    function sendCode(phone){
+        $.ajax({
+            url : '${basePath}/toSendCode.json',
+            data : {phone:phone},
+            type : 'post',
+            cache : false,
+            dataType : 'json',
+            success : function(data) {
+                if (data.code == 10000) {
+                    showMsg("验证码发送成功");
+                }else{
+                    showMsg("验证码发送失败");
+                }
+            },
+        });
+    }
+    function loginByPhone(phone,code){
+        $.ajax({
+            url : '${basePath}/doLoginByCode.json',
+            data : {
+                phone : phone,
+                password : code
+            },
+            type : 'post',
+            cache : false,
+            dataType : 'json',
+            success : function(data) {
+                if (data.code == 10000) {
+                    showMsg("登入成功");
+                    location.href="${basePath}/index.html";
+                }else{
+                    showMsg(data.msg);
+                }
+            },
+            error : function() {
+                showMsg("异常");
+            }
+        });
+    }
+    /*倒计时*/
+    function accoutTime(t){
+
+        window.setTimeout(function(){
+            seconds--;
+            if(seconds==59){
+                t.addClass("on");
+                t.attr("disabled","disabled");
+                t.html("重试("+"<span class='f12'>"+seconds+"</span>"+")");
+                timer(t);
+            }else if(seconds > 0 && seconds < 59) {
+                t.html("重试("+"<span class='f12'>"+seconds+"</span>"+")");
+                timer(t);
+            } else {
+                timerEnable = true;
+                t.attr("disabled",false).removeClass("on");
+                seconds=59;
+                t.html("获取验证码");
+            }
+        }, 1000);
+    }
+</script>
+</body>
+</html>

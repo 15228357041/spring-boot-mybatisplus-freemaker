@@ -3,7 +3,9 @@ package cn.chinau8.util;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
 import java.util.Map;
 
 /**
@@ -12,18 +14,25 @@ import java.util.Map;
  * @author test
  * @date 2016年10月15日
  */
+@Component("springContextUtil")
 public class SpringContextUtil implements ApplicationContextAware {
 
-	private static ApplicationContext context = null;
 
 	private SpringContextUtil() {
 		super();
 	}
 
+	private static ApplicationContext applicationContext; // Spring应用上下文环境
+
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		context = applicationContext;
+		SpringContextUtil.applicationContext = applicationContext;
 	}
+
+	public static ApplicationContext getApplicationContext() {
+		return applicationContext;
+	}
+
 
 	/**
 	 * 根据名称获取bean
@@ -31,7 +40,13 @@ public class SpringContextUtil implements ApplicationContextAware {
 	 * @return
 	 */
 	public static Object getBean(String beanName) {
-		return context.getBean(beanName);
+		String[] beans = applicationContext.getBeanDefinitionNames();
+		/*Arrays.sort(beans);
+		for (String bean : beans)
+		{
+			System.out.println(bean + " of Type :: " + applicationContext.getBean(bean).getClass());
+		}*/
+		return applicationContext.getBean(beanName);
 	}
 
 	/**
@@ -40,7 +55,7 @@ public class SpringContextUtil implements ApplicationContextAware {
 	 * @param clazz 返回的bean类型,若类型不匹配,将抛出异常
 	 */
 	public static <T> T getBean(String beanName, Class<T> clazz) {
-		return context.getBean(beanName, clazz);
+		return applicationContext.getBean(beanName, clazz);
 	}
 	/**
 	 * 根据类型获取bean
@@ -49,7 +64,7 @@ public class SpringContextUtil implements ApplicationContextAware {
 	 */
 	public static <T> T getBean(Class<T> clazz) {
 		T t = null;
-		Map<String, T> map = context.getBeansOfType(clazz);
+		Map<String, T> map = applicationContext.getBeansOfType(clazz);
 		for (Map.Entry<String, T> entry : map.entrySet()) {
 			t = entry.getValue();
 		}
@@ -62,7 +77,7 @@ public class SpringContextUtil implements ApplicationContextAware {
 	 * @return
 	 */
 	public static boolean containsBean(String beanName) {
-		return context.containsBean(beanName);
+		return applicationContext.containsBean(beanName);
 	}
 
 	/**
@@ -71,7 +86,7 @@ public class SpringContextUtil implements ApplicationContextAware {
 	 * @return
 	 */
 	public static boolean isSingleton(String beanName) {
-		return context.isSingleton(beanName);
+		return applicationContext.isSingleton(beanName);
 	}
 
 	/**
@@ -80,7 +95,7 @@ public class SpringContextUtil implements ApplicationContextAware {
 	 * @return
 	 */
 	public static Class getType(String beanName) {
-		return context.getType(beanName);
+		return applicationContext.getType(beanName);
 	}
 
 }

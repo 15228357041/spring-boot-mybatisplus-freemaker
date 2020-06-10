@@ -3,10 +3,7 @@ package cn.chinau8.controller;
 import cn.chinau8.base.BaseController;
 import cn.chinau8.entity.Users;
 import cn.chinau8.service.IUsersService;
-import cn.chinau8.util.Const;
-import cn.chinau8.util.PageData;
-import cn.chinau8.util.Result;
-import cn.chinau8.util.ResultUtil;
+import cn.chinau8.util.*;
 import com.baomidou.mybatisplus.mapper.Condition;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
@@ -74,7 +71,8 @@ public class LoginController extends BaseController {
         if(user == null){
             return ResultUtil.error(-1,"帐号不存在");
         }
-        password = new SimpleHash("SHA-1", loginName, password).toString();	//密码加密
+        //password = new SimpleHash("SHA-1", loginName, password).toString();	//密码加密
+        password = MD5Util.encryptToMD5(password);
         if(!password.equals(user.getPassword())){
             return ResultUtil.error(-1,"用户名或密码错误");
         }

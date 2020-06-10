@@ -13,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author zhuxufeng
- * @since 2020-01-14
+ * @since 2020-06-10
  */
 @TableName("schedule_job_log")
 public class ScheduleJobLog extends Model<ScheduleJobLog> {

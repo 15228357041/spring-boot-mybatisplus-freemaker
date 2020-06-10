@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.chinau8.mapper.ScheduleJobMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="cn.chinau8.entity.ScheduleJob">
+		<id column="id" property="id" />
+		<result column="job_bean_name" property="jobBeanName" />
+		<result column="job_method_name" property="jobMethodName" />
+		<result column="job_params" property="jobParams" />
+		<result column="job_cron_expression" property="jobCronExpression" />
+		<result column="job_status" property="jobStatus" />
+		<result column="job_remark" property="jobRemark" />
+	</resultMap>
+
+</mapper>

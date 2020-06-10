@@ -13,6 +13,12 @@ import java.util.List;
  * Created by Administrator on 2017/4/24.
  */
 public class DateUtil {
+
+    public static void main(String[] args) {
+        int a = cn.hutool.core.date.DateUtil.ageOfNow("1993-11-11");
+        System.out.println(a);
+    }
+
     /**
      * 按照yyyy-MM-dd HH:mm:ss的格式，字符串转日期
      * @param date

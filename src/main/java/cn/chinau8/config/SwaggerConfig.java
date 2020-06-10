@@ -5,6 +5,10 @@ package cn.chinau8.config;
  * @Description
  * @Date: 2020/01/14 13:46
  */
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.SchedulerFactory;
+import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -49,5 +53,4 @@ public class SwaggerConfig {
                 .contact(new Contact("鮀城小帅", "https://blog.csdn.net/weixin_42405670", "15989746839@163.com"))
                 .build();
     }
-
 }
